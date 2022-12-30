@@ -26,7 +26,27 @@ first two steps together.
 
 ## Process
 
+The process of analysis can be broken down into three main steps.
+
 ### Lyrical Data
+
+Lyrical data will be gathered using Genius's API. Lyrical data of all Kanye's music will be gathered.
+Specifically:
+
+- Album
+- Song Title
+- Year released
+- Lyrics
+
+The main item to be analyzed will be the lyrics. Some attributes to be mined from the data include:
+
+- Word count
+- Most used words
+- Themes
+
+This will be found using more advanced text mining techniques like sentiment analysis, named entity recognition, and so on.
+
+The lyrical data is one main half of the data.
 
 ### Social Media Data
 

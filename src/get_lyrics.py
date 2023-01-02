@@ -7,9 +7,15 @@ from lyricsgenius import Genius
 
 genius = Genius(access_token=os.environ['GENIUS_ACCESS_TOKEN'])
 
-artist = genius.search_artist('Kanye West')
+# Get lyrics for all Kanye songs
+while True:
+    try:
+        #artist = genius.search_artist('Kanye West')
+        #artist.save_lyrics("kanye_lyrics")
+        song = genius.search_song('Through the Wire', 'Kanye West')
+        song.save_lyrics()
+        break
+    except:
+        pass
 
-for song in artist.songs:
-    lyrics = song.lyrics
-    with open(f'data/lyrics/{song.title}.txt', 'w') as f:
-        f.write(lyrics)
+# Read in lyrics from JSON

@@ -13,7 +13,7 @@ while True:
         #artist = genius.search_artist('Kanye West')
         #artist.save_lyrics("kanye_lyrics")
         song = genius.search_song('Through the Wire', 'Kanye West')
-        song.save_lyrics()
+        song.save_lyrics("kanye_lyrics")
         break
     except:
         pass

@@ -4,28 +4,35 @@ This script is used to scrape lyrics from all of Kanye's songs using the Genius 
 
 import os
 import json
+import sqlite3
 from lyricsgenius import Genius
 
+# Database config
+connector = sqlite3.connect(os.path.join(os.getcwd(), 'src', 'data', 'lyrics.db'))
+database = connector.cursor()
+
+# Song generation
 songs = []
 json.load(open('data/kanye_songs.json', 'r'))
 
 genius = Genius(access_token=os.environ['GENIUS_ACCESS_TOKEN'])
 
-# TODO: iterate through songs and get lyrics
-# Get lyrics for all Kanye songs
+# Iterate through songs and get lyrics
 for song in songs:
     while True:
         try:
-            # TODO: change to current song
+            # Get current song
             song = genius.search_song(song, 'Kanye West')
             song.save_lyrics(f"{song}_lyrics")
             
-            # TODO: Move the saved lyrics to appropriate folder (in data/lyrics)
+            # Move the saved lyrics to appropriate folder (in data/lyrics)
+            os.rename(f"{song}_lyrics", f"data/lyrics/{song}_lyrics")
             
             break
         except:
             pass
 
+# Save lyrics
 # TODO: Read in lyrics from JSON
 
 # TODO: Save lyrics to separate file

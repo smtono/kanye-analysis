@@ -3,6 +3,7 @@ This script is used to scrape lyrics from all of Kanye's songs using the Genius 
 """
 
 import os
+import shutil
 import json
 import sqlite3
 from lyricsgenius import Genius
@@ -22,23 +23,15 @@ for album, songs in song_info.items():
         while True: # Genius's API sometimes returns error for taking too long
             try:
                 # Get current song
-                song = genius.search_song(song, 'Kanye West')
-                song.save_lyrics(f"{song}_lyrics")
+                fetch_song = genius.search_song(song, 'Kanye West')
                 
-                # Move the saved lyrics to appropriate folder (in data/lyrics)
-                os.rename(f"{song}_lyrics", f"data/lyrics/{song}_lyrics")
+                # Save song
+                filename = f"{song}_lyrics.json".replace(' ', '_').lower()
+                fetch_song.save_lyrics(filename)
+                shutil.move(
+                    os.path.join(os.getcwd(), filename),
+                    os.path.join(os.getcwd(), 'src', 'data', 'lyrics', filename)
+                )
                 break
             except:
                 pass
-
-        # Save lyrics
-        #  Read in lyrics from JSON
-        info = json.load(open(os.path.join(os.getcwd(), 'src', 'data', 'lyrics', f'lyrics/{song}_lyrics.json)', 'r')))
-        lyrics = info['lyrics']
-
-        # Save lyrics to separate file
-        with open(f'data/lryics/{song}_lyrics.txt', 'w') as f:
-            f.write(lyrics)
-        
-        # Save song, info, and lyrics to DB
-        database.execute(f"INSERT INTO kanye VALUES ('{song}', '{album}', {0}, '{lyrics}')")

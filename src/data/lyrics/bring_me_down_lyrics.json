@@ -1,0 +1,67 @@
+{
+ "_type": "song",
+ "annotation_count": 13,
+ "api_path": "/songs/3137",
+ "artist_names": "Kanye West (Ft. Brandy)",
+ "full_title": "Bring Me Down by\u00a0Kanye\u00a0West (Ft.\u00a0Brandy)",
+ "header_image_thumbnail_url": "https://images.genius.com/1114c010127bf9660a598f5e2dce983e.300x300x1.png",
+ "header_image_url": "https://images.genius.com/1114c010127bf9660a598f5e2dce983e.992x992x1.png",
+ "id": 3137,
+ "instrumental": false,
+ "language": "en",
+ "lyrics_owner_id": 2467,
+ "lyrics_state": "complete",
+ "lyrics_updated_at": 1670736541,
+ "path": "/Kanye-west-bring-me-down-lyrics",
+ "pyongs_count": 36,
+ "relationships_index_url": "https://genius.com/Kanye-west-bring-me-down-sample",
+ "release_date_components": {
+  "year": 2005,
+  "month": 8,
+  "day": 30
+ },
+ "release_date_for_display": "August 30, 2005",
+ "release_date_with_abbreviated_month_for_display": "Aug. 30, 2005",
+ "song_art_image_thumbnail_url": "https://images.genius.com/1114c010127bf9660a598f5e2dce983e.300x300x1.png",
+ "song_art_image_url": "https://images.genius.com/1114c010127bf9660a598f5e2dce983e.992x992x1.png",
+ "stats": {
+  "unreviewed_annotations": 4,
+  "hot": false,
+  "pageviews": 215940
+ },
+ "title": "Bring Me Down",
+ "title_with_featured": "Bring Me Down (Ft.\u00a0Brandy)",
+ "updated_by_human_at": 1670736542,
+ "url": "https://genius.com/Kanye-west-bring-me-down-lyrics",
+ "featured_artists": [
+  {
+   "_type": "artist",
+   "api_path": "/artists/1425",
+   "header_image_url": "https://images.genius.com/1ea1cab479750a72bfc2e965763dcdd1.400x155x1.png",
+   "id": 1425,
+   "image_url": "https://images.genius.com/76c7b3dbc44d4c9e5d1c070b4d5201ce.421x421x1.jpg",
+   "index_character": "b",
+   "is_meme_verified": false,
+   "is_verified": true,
+   "name": "Brandy",
+   "slug": "Brandy",
+   "url": "https://genius.com/artists/Brandy",
+   "iq": 508
+  }
+ ],
+ "primary_artist": {
+  "_type": "artist",
+  "api_path": "/artists/72",
+  "header_image_url": "https://images.genius.com/40ecf8460b42287ba6ef0f62272fccd1.1000x667x1.png",
+  "id": 72,
+  "image_url": "https://images.genius.com/5747a529dca274b0f2765d919c555b2d.1000x1000x1.jpg",
+  "index_character": "k",
+  "is_meme_verified": false,
+  "is_verified": false,
+  "name": "Kanye West",
+  "slug": "Kanye-west",
+  "url": "https://genius.com/artists/Kanye-west"
+ },
+ "artist": "Kanye West",
+ "lyrics": "TranslationsEspa\u00f1olBring Me Down Lyrics[Produced by Kanye West and Jon Brion]\n[Chorus: Brandy]\nI always knew that one day\nThey'd try to bring me down\nWay down, way down\nOne day, they'd try to bring me down\nAlways knew that one day\nThey'd try to bring me down\nWay down\nThey'd try to bring me down\n[Verse: Kanye West]\nWe goin' to Mass today, we have to pray\nBesides what the pastor say?\nI have to say, since Pac passed away\nMost you rappers don't even deserve a track from me\nYou see, if you ever wanted to ever be anything\nThere'd always be somebody that shoot down any dream\nThere'll always be haters, that's the way it is\nHater niggas marry hater bitches and have hater kids\nBut they gon' have to take my life 'fore they take my drive\n'Cause when I was barely livin', that's what kept me alive\nJust the thought that maybe it could be better than what we at at this time\nMake it out of this grind, 'fore I'm out of my mind\nAnd get some leeway on the \"He say, she say\"\nYour girl don't like me, how long has she been gay?\nSpanish girls say, \"Yo, no hablo ingl\u00e9s\"\nAnd everybody want to run to me for their sing-le\nIt's funny how these wack niggas need my help\nWasn't around when I couldn't feed myself\nDawg, if I was you, I wouldn't feel myself\nDawg, if I was you, I'd kill myself\nMade a mil' myself and I'm still myself\nAnd I'ma look in the mirror if I need some help\nNow I'll speak from the heart, y'all all frontin'\nEverybody feel a way about K but at least y'all feel something\nYou might also like[Bridge: Brandy]\nWhat you calling?\nI let all in for getting what some get will get ya\nWhat kind of dream we found?\nSee, I'm often catching crosswinds\nForgetting where the hell I met you\nAnd try to bring me down\n[Chorus: Brandy]\nI always knew that one day\nThey'd try to bring me down\nWay down, way down\nOne day, they'd tried to bring me down\nAlways knew that one day\nThey'd try to bring me down\nWay down\nThey'd try to bring me down36Embed"
+}

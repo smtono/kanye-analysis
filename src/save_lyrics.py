@@ -1,7 +1,12 @@
 # Save lyrics
 #  Read in lyrics from JSON
 import json
+import sqlite3
+import os
 
+# Database config
+connector = sqlite3.connect(os.path.join(os.getcwd(), 'src', 'data', 'lyrics.db'))
+database = connector.cursor()
 
 info = json.load(open(os.path.join(os.getcwd(), 'src', 'data', 'lyrics', f'lyrics/{song}_lyrics.json)', 'r')))
 lyrics = info['lyrics']

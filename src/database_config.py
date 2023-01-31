@@ -8,5 +8,5 @@ database = connector.cursor()
 database.execute(
     "CREATE TABLE IF NOT EXISTS "
     "kanye "
-    "(song TEXT, album TEXT, year INT, lyrics TEXT)"
+    "(song TEXT, year INT, lyrics TEXT)"
 )

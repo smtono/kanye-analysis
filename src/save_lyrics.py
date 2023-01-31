@@ -22,7 +22,9 @@ for file in os.listdir(directory): # Iterate through lyrics json files
          song_title = filename.replace('_lyrics.json', '')
          
          # Store Data
-         lyrics[song_title] = data['lyrics']
+         lyrics[song_title]['lyrics'] = data['lyrics'] # lyrics
+         lyrics[song_title]['year'] = data['release_date_components']['year'] # year
+         
          continue
      else:
          continue
@@ -39,5 +41,5 @@ for key, value in lyrics.items():
 
     # TODO: clean lyrics
 
-# Save song, info, and lyrics to DB
-database.execute(f"INSERT INTO kanye VALUES ('{song}', '{album}', {0}, '{lyrics}')")
+    # Save song, info, and lyrics to DB
+    database.execute(f"INSERT INTO kanye VALUES ('{song}', {0}, '{lyrics}')")

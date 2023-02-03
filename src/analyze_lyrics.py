@@ -1,6 +1,8 @@
 """
 Analysis of the music, since the Twitter API is borked, and Kanye is banned, that is kind of going out the window.
 
+!!!!! FEBRUARY 9, THE TWITTER API WILL BE A PAID SERVICE SO THAT IS NOT AN OPTION ANYMORE !!!!!
+
 Instead, I will analyze the lyrics of Kanye's songs, and see if I can find any patterns in his lyrics.
 We will do this by analyzing a few things:
 -Toxicity using Google Perspective
@@ -40,6 +42,5 @@ def find_word_frequency(lines: list) -> float:
     Iterate through lines of text, performing word frequency analysis on each line
     Find average at the end to get the word frequency for the whole song
     """
-    
     # https://www.nltk.org/book/ch01.html
     

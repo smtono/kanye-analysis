@@ -1,6 +1,16 @@
 """
 This script is used to extract the lyrics object from the JSON objects located in src/data/lyrics
 These lyrics are then written to text files, and stored in the database after light cleaning of Genius artifacts
+
+The goal of this script is to extract the LYRICS data points from the JSON files, and store them in a database
+Alongside the song title, and year of release
+This will be achieved by iterating through the JSON files, and extracting the lyrics object
+
+- Initialize the DB
+- Iterate through the JSON files
+- Extract the lyrics object
+- Clean the lyrics object
+- Save the lyrics to teh DB
 """
 
 # Save lyrics

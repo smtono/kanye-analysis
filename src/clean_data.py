@@ -6,10 +6,10 @@ The goal of this script is to extract the LYRICS data points from the JSON files
 Alongside the song title, and year of release
 This will be achieved by iterating through the JSON files, and extracting the lyrics object
 
-- Initialize the DB
 - Iterate through the JSON files
 - Extract the lyrics object
 - Clean the lyrics object
+- Initialize the DB
 - Save the lyrics to teh DB
 """
 
@@ -19,6 +19,7 @@ import json
 import sqlite3
 import os
 
+# Iterate Files
 lyrics = {} # Store lyrics from json files
 
 directory = os.fsencode(os.path.join(os.getcwd(), 'src', 'data', 'lyrics'))
@@ -27,19 +28,15 @@ for file in os.listdir(directory): # Iterate through lyrics json files
      filename = os.fsdecode(file)
      if filename.endswith(".json"):
          data = json.load(open(os.path.join(os.getcwd(), 'src', 'data', 'lyrics', filename), 'r'))
-         
-         # Clean song title
-         song_title = filename.replace('_lyrics.json', '')
-         
+
          # Store Data
-         lyrics[song_title]['lyrics'] = data['lyrics'] # lyrics
-         lyrics[song_title]['year'] = data['release_date_components']['year'] # year
-         
-         continue
+         lyrics[data['title']]['lyrics'] = data['lyrics'] # lyrics
+         lyrics[data['title']]['year'] = data['release_date_components']['year'] # year
+
      else:
          continue
 
-# Saving lyrics
+# Clean Lyrics
 
 # Database config
 connector = sqlite3.connect(os.path.join(os.getcwd(), 'src', 'data', 'lyrics.db'))

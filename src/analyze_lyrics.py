@@ -12,6 +12,7 @@ We will do this by analyzing a few things:
 """
 
 import nltk
+import pandas as pd
 
 """
 Each of these functions will read the lyrics line by line

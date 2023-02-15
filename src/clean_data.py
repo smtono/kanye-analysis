@@ -37,6 +37,12 @@ for file in os.listdir(directory): # Iterate through lyrics json files
          continue
 
 # Clean Lyrics
+delimeter = ['.', '!', '?', 
+             '\n', '\r', '\t',
+             '[', ']', '(', ')']
+
+for key, value in lyrics.items():
+    value['lyrics'] = value['lyrics'].replace()
 
 # Database config
 connector = sqlite3.connect(os.path.join(os.getcwd(), 'src', 'data', 'lyrics.db'))
@@ -46,7 +52,5 @@ for key, value in lyrics.items():
     song = key
     lyrics = value['lyrics']
 
-    # TODO: clean lyrics
-
     # Save song, info, and lyrics to DB
-    database.execute(f"INSERT INTO kanye VALUES ('{song}', {0}, '{lyrics}')")
+    database.execute(f"INSERT INTO kanye VALUES ('{song}', '{lyrics}')")

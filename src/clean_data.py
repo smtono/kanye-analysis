@@ -30,8 +30,9 @@ for file in os.listdir(directory): # Iterate through lyrics json files
          data = json.load(open(os.path.join(os.getcwd(), 'src', 'data', 'lyrics', filename), 'r'))
 
          # Store Data
-         lyrics[data['title']]['lyrics'] = data['lyrics'] # lyrics
-         lyrics[data['title']]['year'] = data['release_date_components']['year'] # year
+         lyrics[f"{data['title']}"] = {}
+         lyrics[f"{data['title']}"]['lyrics'] = data['lyrics']
+         lyrics[f"{data['title']}"]['year'] = data['release_date_components']['year']
 
      else:
          continue
@@ -42,7 +43,15 @@ delimeter = ['.', '!', '?',
              '[', ']', '(', ')']
 
 for key, value in lyrics.items():
-    value['lyrics'] = value['lyrics'].replace()
+    song = key
+    lyrics = value['lyrics']
+
+    # Clean Lyrics
+    for char in delimeter:
+        lyrics = lyrics.replace(char, '')
+
+    # Save cleaned lyrics
+    lyrics[song]['lyrics'] = lyrics
 
 # Database config
 connector = sqlite3.connect(os.path.join(os.getcwd(), 'src', 'data', 'lyrics.db'))

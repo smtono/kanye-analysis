@@ -20,7 +20,7 @@ import sqlite3
 import os
 
 # Iterate Files
-lyrics = {} # Store lyrics from json files
+lyrics_dict = {} # Store lyrics from json files
 
 directory = os.fsencode(os.path.join(os.getcwd(), 'src', 'data', 'lyrics'))
 
@@ -30,9 +30,9 @@ for file in os.listdir(directory): # Iterate through lyrics json files
          data = json.load(open(os.path.join(os.getcwd(), 'src', 'data', 'lyrics', filename), 'r'))
 
          # Store Data
-         lyrics[f"{data['title']}"] = {}
-         lyrics[f"{data['title']}"]['lyrics'] = data['lyrics']
-         lyrics[f"{data['title']}"]['year'] = data['release_date_components']['year']
+         lyrics_dict[f"{data['title']}"] = {}
+         lyrics_dict[f"{data['title']}"]['lyrics'] = data['lyrics']
+         lyrics_dict[f"{data['title']}"]['year'] = data['release_date_components']['year']
 
      else:
          continue
@@ -42,24 +42,26 @@ delimeter = ['.', '!', '?',
              '\n', '\r', '\t',
              '[', ']', '(', ')']
 
-for key, value in lyrics.items():
+for key, value in lyrics_dict.items():
     song = key
     lyrics = value['lyrics']
 
     # Clean Lyrics
+    # TODO: fix this
     for char in delimeter:
         lyrics = lyrics.replace(char, '')
 
     # Save cleaned lyrics
-    lyrics[song]['lyrics'] = lyrics
+    lyrics_dict[f"{song}"]['lyrics'] = lyrics
 
 # Database config
 connector = sqlite3.connect(os.path.join(os.getcwd(), 'src', 'data', 'lyrics.db'))
 database = connector.cursor()
 
-for key, value in lyrics.items():
+for key, value in lyrics_dict.items():
     song = key
     lyrics = value['lyrics']
 
     # Save song, info, and lyrics to DB
-    database.execute(f"INSERT INTO kanye VALUES ('{song}', '{lyrics}')")
+    query = f"INSERT INTO kanye VALUES ('{song}', '{lyrics}')"
+    database.execute(query)

@@ -1,4 +1,9 @@
-# Kanye West Analysis
+# Kanye West Analysis (Abandoned?)
+
+**NOTE**
+This repository is abandoned at the moment until the Twitter API is more accessible
+
+## Info
 
 An analysis of Kanye's lyrics in correlation with his Twitter feed
 This project explores Kanye West's musical abilities, lyrics, meanings, in correlation with some of the strange things he has said on social media.
